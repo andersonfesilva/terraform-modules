@@ -1,0 +1,21 @@
+# values.yaml
+# Configurações para a nossa aplicação web
+
+app_name: "minha-app-incrivel"
+environment: "desenvolvimento"
+
+# Configurações da instância
+instance:
+  type: "t2.nano"
+  ami: "ami-0c55b159cbfafe1f0" # Uma AMI comum do Ubuntu
+
+# Regras de Firewall (exemplo de lista de objetos)
+firewall_rules:
+  - name: "allow-http"
+    port: 80
+    protocol: "tcp"
+    cidr_blocks: ["0.0.0.0/0"]
+  - name: "allow-ssh"
+    port: 22
+    protocol: "tcp"
+    cidr_blocks: ["189.4.10.5/32"] # Apenas o nosso IP
